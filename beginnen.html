@@ -15,6 +15,11 @@ Ik ben begonnen
             }
             maaltijden.push(lunch1);
             console.log(maaltijden);
+            var eindString = "";
+            for(var x = 0; x < maaltijden.length; x ++){
+                eindString += "<tr><td>" + maaltijden[x].datum + "</td><td>marjolein</td></tr>";
+            }
+            document.getElementById("fiets").innerHTML = eindString;
         }
         var maaltijden = [];
 
@@ -26,6 +31,9 @@ Ik ben begonnen
         weekdag<input type=text id=weekdaginput >
         <br>
         datum <input type="date" id=dateinput>
+        <table id=fiets>
+
+        </table>
     </body>
 
 </html>

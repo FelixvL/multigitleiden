@@ -7,6 +7,12 @@ Ik ben begonnen
 <html>
     <head>
         <script>
+        window.onload = function(){
+            var m = localStorage.getItem('maaltijdenarray');
+            if(m != undefined){
+                maaltijden = JSON.parse(m);
+            }
+        }
         function etenladen(){
             alert();
             var lunch1 = {
@@ -20,6 +26,8 @@ Ik ben begonnen
                 eindString += "<tr><td>" + maaltijden[x].datum + "</td><td>" + maaltijden[x].weekdag + "</td></tr>";
             }
             document.getElementById("deLunch").innerHTML = eindString;
+            var maaltijdenjson = JSON.stringify(maaltijden);
+            localStorage.setItem('maaltijdenarray', maaltijdenjson);
         }
         var maaltijden = [];
 
